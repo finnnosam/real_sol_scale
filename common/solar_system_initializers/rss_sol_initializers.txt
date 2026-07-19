@@ -419,36 +419,10 @@ sol_system_initializer = {
 	#######################################
 }
 
-proxima_centauri = {
-	name = "NAME_Proxima_Centauri"
-	class = sc_m
-
-	flags = { proxima_centauri }
-
-	init_effect = {
-		set_star_flag = empire_cluster
-
-		solar_system = { 
-			random_system = { 
-				limit = { 
-					has_star_flag = sol 
-					NOT = { has_hyperlane_to = prev } 
-				} 
-				add_hyperlane = { from = this to = prev } 
-			}
-		}
-	}
-
-	asteroid_belt = { #Kuiper Belt
-		type = icy_asteroid_belt
-		radius = 100
-	}
-}
-
 # Neighbor Tier 1 First Colony		- AlphaCen
 alpha_centauri_ab_colony = {
 	name = "NAME_Alpha_Centauri"
-	class = sc_trinary_1 #sc_alphacent_binary_g_k #Comment is the only main stars version
+	class = sc_trinary_1 #sc_alphacent_binary_g_k #Comment is the 'only main stars' version
 	flags = { neighbor_t1_first_colony }
 
 	init_effect = {
