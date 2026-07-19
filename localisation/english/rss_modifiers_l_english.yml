@@ -1,0 +1,13 @@
+﻿l_english:
+
+ terraforming_candidate:0 "Terraforming Candidate"
+ outer_planet:0 "Outer Planet"
+
+
+ decision_add_outer_planet: "Add Outer Planet Modifier"
+ decision_add_outer_planet_desc: "The Outer Planet modifier makes the name of the planet permanently visible, however it also makes it show up in the expansion planner."
+ decision_add_outer_planet_effects_short: "The §Y$outer_planet$§! modifier will be added to this planet."
+
+ decision_remove_outer_planet: "Remove Outer Planet Modifier"
+ decision_remove_outer_planet_desc: "The Outer Planet modifier makes the name of the planet permanently visible, however it also makes it show up in the expansion planner."
+ decision_remove_outer_planet_effects_short: "The §Y$outer_planet$§! modifier will be removed from this planet."

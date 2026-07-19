@@ -1,0 +1,10 @@
+﻿l_english:
+# See also: english\random_names\random_names_l_english.yml, which contains the names used for randomly-generated stars. The stars named in this file belong to particular, scripted star systems.
+
+######################
+# PRESCRIPTED SYSTEMS
+######################
+
+# Sol
+ NAME_Juno:0 "Juno"
+ NAME_Eileithyia:0 "Eileithyia"

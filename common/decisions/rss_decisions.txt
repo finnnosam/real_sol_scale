@@ -1,0 +1,66 @@
+##########################################################################
+# Decisions
+##########################################################################
+
+# Outer Planet Modifier
+decision_add_outer_planet = {
+	sound = event_administrative_work
+	icon = decision_politics
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1
+		}
+	}
+
+	potential = {
+		NOT = {
+			has_modifier = outer_planet
+		}
+	}
+
+	allow = {
+		NOT = {
+			has_modifier = outer_planet
+		}
+	}
+
+	effect = {
+		add_modifier = { modifier = "outer_planet" days = -1 }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_remove_outer_planet = {
+	sound = event_administrative_work
+	icon = decision_politics
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1
+		}
+	}
+
+	potential = { 
+		exists = from
+		exists = space_owner
+		space_owner = { is_same_value = from }
+
+		has_modifier = outer_planet 
+	}
+
+	allow = { 
+		has_modifier = outer_planet
+	}
+
+	effect = {
+		remove_modifier = "outer_planet"
+	}
+
+	ai_weight = { weight = 0 }
+}

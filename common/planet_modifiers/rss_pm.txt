@@ -1,0 +1,4 @@
+pm_outer_planet = {
+	spawn_chance = 0
+	modifier = "outer_planet"
+}
