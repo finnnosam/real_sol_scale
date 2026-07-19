@@ -368,181 +368,21 @@ sol_system_initializer = {
 		}
 	}
 
-
-
-
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "barnards_star"
 	}
 
-	init_effect = {
-		solar_system = {
-			spawn_system = {
-				min_distance = 4
-				max_distance = 4
-				initializer = proxima_centauri
-				hyperlane = no
-			}
-		}
-	}
-}
-
-proxima_centauri = {
-	name = "NAME_Proxima_Centauri"
-	class = sc_m
-
-	flags = { proxima_centauri }
-
-	init_effect = {
-		set_star_flag = empire_cluster
-
-		solar_system = { 
-			random_system = { 
-				limit = { 
-					has_star_flag = sol 
-					NOT = { has_hyperlane_to = prev } 
-				} 
-				add_hyperlane = { from = this to = prev } 
-			}
-		}
-	}
-
-	asteroid_belt = { #Kuiper Belt
-		type = icy_asteroid_belt
-		radius = 102
-	}
-
-	planet = {
-		name = "NAME_Proxima_Centauri"
-		count = 1
-		class = pc_m_star
-		orbit_distance = 0
-		orbit_angle = 1
-		size = 28
-		has_ring = no
-	}
-
-	change_orbit = 18 #min
-
-	planet = { #I -real 'd'
-		class = pc_barren
-		orbit_distance = 2
-		orbit_angle = 225
-		size = 11
-		has_ring = no
-
-		init_effect = {
-			add_modifier = {
-				modifier = "tidal_locked"
-				days = -1
-			}
-		}
-	}
-
-	planet = { #II -real 'b'
-		class = pc_barren
-		orbit_distance = 1
-		orbit_angle = -75
-		size = 17
-		has_ring = no
-
-		init_effect = {
-			add_modifier = {
-				modifier = "tidal_locked"
-				days = -1
-			}
-		}
-	}
-
-	planet = { #III
-		class = pc_barren_cold
-		size = 12
-		orbit_distance = 2
-		orbit_angle = 170
-		has_ring = no
-	}
-
-	planet = { #IV
-		class = pc_barren_cold
-		size = 14
-		orbit_distance = 3
-		orbit_angle = 100
-		has_ring = no
-	}
-
-	planet = { #V
-		class = pc_barren_cold
-		size = 15
-		orbit_distance = 4.5
-		orbit_angle = 195
-		has_ring = no
-	}
-
-	planet = { #VI
-		class = pc_frozen
-		size = 16
-		orbit_distance = 6
-		orbit_angle = 125
-		has_ring = no
-	}
-
-	planet = { #VII -real 'c'
-		class = pc_gas_giant
-		size = 15
-		orbit_distance = 21.5
-		orbit_angle = 170
-		has_ring = no
-
-		moon = {
-			class = pc_frozen
-			size = 3
-			orbit_distance = 9
-			orbit_angle = 76
-			has_ring = no
-		}
-
-	}
-
-	planet = {
-		class = pc_ice_asteroid
-		orbit_distance = 44
-		orbit_angle = 41
-		size = @default_asteroid_size
-		has_ring = no
-	}
-
-	planet = {
-		class = pc_ice_asteroid
-		orbit_distance = 0
-		orbit_angle = 72
-		size = @default_asteroid_size
-		has_ring = no
-	}
-
-	planet = {
-		class = pc_ice_asteroid
-		orbit_distance = 0
-		orbit_angle = 72
-		size = @default_asteroid_size
-		has_ring = no
-	}
-
-	planet = {
-		class = pc_ice_asteroid
-		orbit_distance = 0
-		orbit_angle = 72
-		size = @default_asteroid_size
-		has_ring = no
-	}
-
-	planet = {
-		class = pc_ice_asteroid
-		orbit_distance = 0
-		orbit_angle = 72
-		size = @default_asteroid_size
-		has_ring = no
-	}
+	#init_effect = {
+	#	solar_system = {
+	#		spawn_system = {
+	#			min_distance = 4
+	#			max_distance = 4
+	#			initializer = proxima_centauri
+	#			hyperlane = no
+	#		}
+	#	}
+	#}
 
 	#######################################
 	##### Alpha Centauri Colony logic #####
@@ -579,10 +419,36 @@ proxima_centauri = {
 	#######################################
 }
 
+proxima_centauri = {
+	name = "NAME_Proxima_Centauri"
+	class = sc_m
+
+	flags = { proxima_centauri }
+
+	init_effect = {
+		set_star_flag = empire_cluster
+
+		solar_system = { 
+			random_system = { 
+				limit = { 
+					has_star_flag = sol 
+					NOT = { has_hyperlane_to = prev } 
+				} 
+				add_hyperlane = { from = this to = prev } 
+			}
+		}
+	}
+
+	asteroid_belt = { #Kuiper Belt
+		type = icy_asteroid_belt
+		radius = 100
+	}
+}
+
 # Neighbor Tier 1 First Colony		- AlphaCen
 alpha_centauri_ab_colony = {
 	name = "NAME_Alpha_Centauri"
-	class = sc_alphacent_binary_g_k
+	class = sc_trinary_1 #sc_alphacent_binary_g_k #Comment is the only main stars version
 	flags = { neighbor_t1_first_colony }
 
 	init_effect = {
@@ -591,7 +457,7 @@ alpha_centauri_ab_colony = {
 		solar_system = { 
 			random_system = { 
 				limit = { 
-					has_star_flag = proxima_centauri 
+					has_star_flag = sol 
 					NOT = { has_hyperlane_to = prev } 
 				} 
 				add_hyperlane = { from = this to = prev } 
@@ -603,15 +469,18 @@ alpha_centauri_ab_colony = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
 	}
 
+	#######################################
+	########### Alpha Centauri A ##########
+
 	planet = {	#Alpha Centauri A
 		name = "NAME_Alpha_Centauri_A"
 		count = 1
 		class = star
-		orbit_distance = 100
-		orbit_angle = 350
+		orbit_distance = 440
+		orbit_angle = 150
 		size = 34
 		has_ring = no
-		satellite_naming_policy = upper_case_roman_numerals
+		satellite_naming_policy = upper_case_roman_numerals	#needed for multiple star systems
 		
 		change_orbit = 19	#min
 
@@ -672,14 +541,17 @@ alpha_centauri_ab_colony = {
 		}
 	}
 
-	change_orbit = -100	#Go back to center; number concerns the previous star (the parent)
+	change_orbit = -440	#Go back to center; number concerns the previous star (the parent)
+
+	#######################################
+	########### Alpha Centauri B ##########
 
 	planet = {	#Alpha Centauri B
 		name = "NAME_Alpha_Centauri_B"
 		count = 1
 		class = star
-		orbit_distance = -100
-		orbit_angle = 0
+		orbit_distance = 446
+		orbit_angle = -33
 		size = 27
 		has_ring = no
 		satellite_naming_policy = upper_case_roman_numerals
@@ -733,6 +605,103 @@ alpha_centauri_ab_colony = {
 			orbit_angle = 60
 			size = 11
 			has_ring = yes
+		}
+	}
+
+	change_orbit = -446	#Go back to center
+
+	#######################################
+	########### Proxima Centauri ##########
+
+	planet = {
+		name = "NAME_Proxima_Centauri"
+		count = 1
+		class = pc_m_star
+		orbit_distance = 440
+		orbit_angle = -162
+		size = 28
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+	
+		change_orbit = 18 #min
+
+		planet = { #I -real 'd'
+			class = pc_barren
+			orbit_distance = 2
+			orbit_angle = 225
+			size = 11
+			has_ring = no
+
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+			}
+		}
+
+		planet = { #II -real 'b'
+			class = pc_barren
+			orbit_distance = 1
+			orbit_angle = -75
+			size = 17
+			has_ring = no
+
+			init_effect = {
+				add_modifier = {
+					modifier = "tidal_locked"
+					days = -1
+				}
+			}
+		}
+
+		planet = { #III
+			class = pc_barren_cold
+			size = 12
+			orbit_distance = 2
+			orbit_angle = 170
+			has_ring = no
+		}
+
+		planet = { #IV
+			class = pc_barren_cold
+			size = 14
+			orbit_distance = 3
+			orbit_angle = 100
+			has_ring = no
+		}
+
+		planet = { #V
+			class = pc_barren_cold
+			size = 15
+			orbit_distance = 4.5
+			orbit_angle = 195
+			has_ring = no
+		}
+
+		planet = { #VI
+			class = pc_frozen
+			size = 16
+			orbit_distance = 6
+			orbit_angle = 125
+			has_ring = no
+		}
+
+		planet = { #VII -real 'c'
+			class = pc_gas_giant
+			size = 15
+			orbit_distance = 21.5
+			orbit_angle = 170
+			has_ring = no
+
+			moon = {
+				class = pc_frozen
+				size = 3
+				orbit_distance = 9
+				orbit_angle = 76
+				has_ring = no
+			}
+
 		}
 	}
 }
