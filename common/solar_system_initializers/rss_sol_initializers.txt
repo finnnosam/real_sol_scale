@@ -3,6 +3,12 @@
 @jumps = 3
 @default_asteroid_size = 3	#Vanilla 5
 
+# Sol - Capital
+# Alpha Cen - Colony | No Colony
+# Procyon - No Colony
+# Sirius - No Colony
+# Barnard - No Colony
+
 ### Sol System
 sol_system_initializer = {
 	name = "NAME_Sol"
@@ -10,11 +16,11 @@ sol_system_initializer = {
 	class = "sc_g"
 	asteroid_belt = { #Asteroid Belt
 		type = rocky_asteroid_belt
-		radius = 56
+		radius = @sol_asteroidbelt_radius
 	}
 	asteroid_belt = { #Kuiper Belt
 		type = icy_asteroid_belt
-		radius = 461
+		radius = @sol_kuiperbelt_radius
 	}
 
 	flags = { empire_home_system sol_system sol galactic_landmark_system }
@@ -36,16 +42,16 @@ sol_system_initializer = {
 		class = "pc_g_star"
 		orbit_distance = 0
 		orbit_angle = 1
-		size = 30
+		size = @sol_sunsize
 		has_ring = no
 	}
 
 	planet = { #Mercury
 		name = "NAME_Mercury"
 		class = "pc_molten"
-		orbit_distance = 24
-		orbit_angle = 160
-		size = 7
+		orbit_distance = @sol_mercury_distance
+		orbit_angle = @sol_mercury_orbit_angle
+		size = @sol_mercury_size
 		has_ring = no
 		flags = { planet_mercury }
 
@@ -62,9 +68,9 @@ sol_system_initializer = {
 	planet = { #Venus
 		name = "NAME_Venus"
 		class = "pc_toxic"
-		orbit_distance = 5
-		orbit_angle = 125
-		size = 17
+		orbit_distance = @sol_venus_distance
+		orbit_angle = @sol_venus_orbit_angle
+		size = @sol_venus_size
 		has_ring = no
 		flags = { planet_venus }
 
@@ -81,9 +87,9 @@ sol_system_initializer = {
 	planet = { #Earth
 		name = "NAME_Earth"
 		class = "pc_continental"
-		orbit_distance = 4
-		orbit_angle = 120
-		size = 18
+		orbit_distance = @sol_earth_distance
+		orbit_angle = @sol_earth_orbit_angle
+		size = @sol_earth_size
 		starting_planet = yes
 		has_ring = no
 		entity = "continental_planet_earth_entity"
@@ -100,9 +106,9 @@ sol_system_initializer = {
 		moon = {
 			name = "NAME_Luna"
 			class = "pc_barren_cold"
-			size = 5
-			orbit_distance = 6
-			orbit_angle = 40
+			orbit_distance = @sol_moon_distance
+			orbit_angle = @sol_moon_orbit_angle
+			size =  @sol_moon_size
 			has_ring = no
 			entity = "cold_barren_planet_luna_entity"
 			flags = { planet_earth_moon moon_luna }
@@ -112,9 +118,9 @@ sol_system_initializer = {
 	planet = { #Mars
 		name = "NAME_Mars"
 		class = "pc_barren"
-		orbit_distance = 7
-		orbit_angle = 60
-		size = 10
+		orbit_distance = @sol_mars_distance
+		orbit_angle = @sol_mars_orbit_angle
+		size = @sol_mars_size
 		has_ring = no
 		entity = "barren_planet_mars_entity"
 		flags = { planet_mars }
@@ -130,8 +136,8 @@ sol_system_initializer = {
 	planet = { #1 Ceres
 		name = "NAME_1_Ceres"
 		class = "pc_asteroid"
-		orbit_distance = 16
-		orbit_angle = -210
+		orbit_distance = @sol_1ceres_distance
+		orbit_angle = @sol_1ceres_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -139,8 +145,8 @@ sol_system_initializer = {
 	planet = { #2 Pallas
 		name = "NAME_2_Pallas"
 		class = "pc_asteroid"
-		orbit_distance = 0
-		orbit_angle = -95
+		orbit_distance = @sol_2pallas_distance
+		orbit_angle = @sol_2pallas_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -148,8 +154,8 @@ sol_system_initializer = {
 	planet = { #3 Juno
 		name = "NAME_3_Juno"
 		class = "pc_asteroid"
-		orbit_distance = 0
-		orbit_angle = 285
+		orbit_distance = @sol_3juno_distance
+		orbit_angle = @sol_3juno_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -157,8 +163,8 @@ sol_system_initializer = {
 	planet = { #4 Vesta
 		name = "NAME_4_Vesta"
 		class = "pc_asteroid"
-		orbit_distance = 0
-		orbit_angle = -80
+		orbit_distance = @sol_4vesta_distance
+		orbit_angle = @sol_4vesta_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -166,47 +172,47 @@ sol_system_initializer = {
 	planet = { #Jupiter
 		name = "NAME_Jupiter"
 		class = "pc_gas_giant"
-		orbit_distance = 35
-		orbit_angle = -160
-		size = 35
+		orbit_distance = @sol_jupiter_distance
+		orbit_angle = @sol_jupiter_orbit_angle
+		size = @sol_jupiter_size
 		has_ring = no
 		entity = "gas_giant_jupiter_entity"
-		change_orbit = 6
+		change_orbit = @sol_jupiter_min_orbit
 		flags = { planet_jupiter realsol_jupiter }
 
 		moon = {
 			name = "NAME_Io"
 			class = "pc_molten"
-			size = 5
-			orbit_distance = 10
-			orbit_angle = 110
+			orbit_distance = @sol_io_distance
+			orbit_angle = @sol_io_orbit_angle
+			size = @sol_io_size
 			has_ring = no
 			flags = { moon_io }
 		}
 		moon = {
 			name = "NAME_Europa"
 			class = "pc_frozen"
-			size = 4
-			orbit_distance = 2
-			orbit_angle = 190
+			orbit_distance = @sol_europa_distance
+			orbit_angle = @sol_europa_orbit_angle
+			size = @sol_europa_size
 			has_ring = no
 			flags = { moon_europa }
 		}
 		moon = {
 			name = "NAME_Ganymede"
 			class = "pc_frozen"
-			size = 7
-			orbit_distance = 2
-			orbit_angle = 80
+			orbit_distance = @sol_ganymede_distance
+			orbit_angle = @sol_ganymede_orbit_angle
+			size = @sol_ganymede_size
 			has_ring = no
 			flags = { moon_ganymede }
 		}
 		moon = {
 			name = "NAME_Callisto"
 			class = "pc_frozen"
-			size = 7
-			orbit_distance = 2
-			orbit_angle = -155
+			orbit_distance = @sol_callisto_distance
+			orbit_angle = @sol_callisto_orbit_angle
+			size = @sol_callisto_size
 			has_ring = no
 			flags = { moon_callisto }
 		}
@@ -215,20 +221,20 @@ sol_system_initializer = {
 	planet = { #Saturn
 		name = "NAME_Saturn"
 		class = "pc_gas_giant"
-		orbit_distance = 60
-		orbit_angle = 170
-		size = 30
+		orbit_distance = @sol_saturn_distance
+		orbit_angle = @sol_saturn_orbit_angle
+		size = @sol_saturn_size
 		has_ring = yes
 		entity = "gas_giant_saturn_entity"
-		change_orbit = 7
+		change_orbit = @sol_saturn_min_orbit
 		flags = { planet_saturn }
 
 		moon = {
 			name = "NAME_Titan"
 			class = "pc_frozen"
-			size = 8
-			orbit_distance = 11
-			orbit_angle = 320
+			orbit_distance = @sol_titan_distance
+			orbit_angle = @sol_titan_orbit_angle
+			size = @sol_titan_size
 			has_ring = no
 			flags = { moon_titan }
 		}
@@ -237,9 +243,9 @@ sol_system_initializer = {
 	planet = { #Uranus
 		name = "NAME_Uranus"
 		class = "pc_gas_giant"
-		orbit_distance = 134
-		orbit_angle = 125
-		size = 20
+		orbit_distance = @sol_uranus_distance
+		orbit_angle = @sol_uranus_orbit_angle
+		size = @sol_uranus_size
 		has_ring = no
 		flags = { planet_uranus }
 
@@ -263,9 +269,9 @@ sol_system_initializer = {
 	planet = { #Neptune
 		name = "NAME_Neptune"
 		class = "pc_gas_giant"
-		orbit_distance = 151
-		orbit_angle = -195
-		size = 20
+		orbit_distance = @sol_neptune_distance
+		orbit_angle = @sol_neptune_orbit_angle
+		size = @sol_neptune_size
 		has_ring = no
 		flags = { planet_neptune }
 
@@ -279,9 +285,9 @@ sol_system_initializer = {
 		moon = {
 			name = "NAME_Triton"
 			class = "pc_frozen"
-			size = 4
-			orbit_distance = 9
-			orbit_angle = 115
+			orbit_distance = @sol_triton_distance
+			orbit_angle = @sol_triton_orbit_angle
+			size = @sol_triton_size
 			has_ring = no
 			flags = { moon_triton }
 		}
@@ -299,8 +305,8 @@ sol_system_initializer = {
 	planet = { #pluto
 		name = "NAME_134340_Pluto"
 		class = "pc_asteroid"
-		orbit_distance = 25
-		orbit_angle = -210
+		orbit_distance = @sol_pluto_distance
+		orbit_angle = @sol_pluto_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -308,8 +314,8 @@ sol_system_initializer = {
 	planet = { #Makemake
 		name = "NAME_136472_Makemake"
 		class = "pc_ice_asteroid"
-		orbit_distance = 0
-		orbit_angle = -95
+		orbit_distance = @sol_makemake_distance
+		orbit_angle = @sol_makemake_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -317,8 +323,8 @@ sol_system_initializer = {
 	planet = { #Haumea
 		name = "NAME_136108_Haumea"
 		class = "pc_ice_asteroid"
-		orbit_distance = 0
-		orbit_angle = 285
+		orbit_distance = @sol_haumea_distance
+		orbit_angle = @sol_haumea_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -326,8 +332,8 @@ sol_system_initializer = {
 	planet = { #Varuna
 		name = "NAME_20000_Varuna"
 		class = "pc_ice_asteroid"
-		orbit_distance = 0
-		orbit_angle = -80
+		orbit_distance = @sol_varuna_distance
+		orbit_angle = @sol_varuna_orbit_angle
 		size = @default_asteroid_size
 		has_ring = no
 	}
@@ -335,9 +341,9 @@ sol_system_initializer = {
 	planet = { #Juno
 		name = "NAME_Juno"
 		class = "pc_gas_giant"
-		orbit_distance = 35
-		orbit_angle = -195
-		size = 15
+		orbit_distance = @sol_juno_distance
+		orbit_angle = @sol_juno_orbit_angle
+		size = @sol_juno_size
 		has_ring = no
 		flags = { planet_juno }
 
@@ -351,9 +357,9 @@ sol_system_initializer = {
 		moon = {
 			name = "NAME_Eileithyia"
 			class = "pc_frozen"
-			size = 6
-			orbit_distance = 8
-			orbit_angle = 84
+			orbit_distance = @sol_eileithyia_distance
+			orbit_angle = @sol_eileithyia_orbit_angle
+			size = @sol_eileithyia_size
 			has_ring = no
 			flags = { moon_eileithyia }
 		}

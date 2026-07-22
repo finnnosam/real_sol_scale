@@ -3,7 +3,6 @@
 @jumps = 3
 @default_asteroid_size = 3	#Vanilla 5
 
-### Washing ###
 # Sol Neighbor Tier 2	- Procyon
 sol_neighbor_t2 = {
 	name = "NAME_Procyon"

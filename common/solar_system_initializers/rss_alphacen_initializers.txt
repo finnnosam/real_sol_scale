@@ -33,10 +33,10 @@ alpha_centauri_ab_colony = {
 	planet = {	#Alpha Centauri A
 		name = "NAME_Alpha_Centauri_A"
 		count = 1
-		class = star
-		orbit_distance = 440
-		orbit_angle = 150
-		size = 34
+		class = pc_g_star
+		orbit_distance = @ac_aca_distance
+		orbit_angle = @ac_aca_orbit_angle
+		size = @ac_aca_size
 		has_ring = no
 		satellite_naming_policy = upper_case_roman_numerals	#needed for multiple star systems
 		
@@ -44,36 +44,34 @@ alpha_centauri_ab_colony = {
 
 		planet = { #I
 			class = "pc_molten"
-			orbit_distance = 4
-			orbit_angle = 150
-			size = 7
+			orbit_distance = @ac_acaI_distance
+			orbit_angle = @ac_acaI_orbit_angle
+			size = @ac_acaI_size
 			has_ring = no
 		}
 
 		planet = { #II
 			class = "pc_molten"
-			orbit_distance = 5
-			orbit_angle = 45
-			size = 13
+			orbit_distance = @ac_acaII_distance
+			orbit_angle = @ac_acaII_orbit_angle
+			size = @ac_acaII_size
 			has_ring = no
 		}
 
 		planet = {#III
 			class = "pc_barren"
-			orbit_distance = 7.5
-			orbit_angle = 205
-			size = 11
+			orbit_distance = @ac_acaIII_distance
+			orbit_angle = @ac_acaIII_orbit_angle
+			size = @ac_acaIII_size
 			has_ring = yes
-			change_orbit = 6
 		}
 
 		planet = { #IV - hab zone
 			class = "pc_continental"
-			orbit_distance = 8
-			orbit_angle = 255
-			size = 17
+			orbit_distance = @ac_acaIV_distance
+			orbit_angle = @ac_acaIV_orbit_angle
+			size = @ac_acaIV_size
 			has_ring = yes
-			change_orbit = 6
 
 			init_effect = {
 				prevent_anomaly = yes
@@ -83,23 +81,23 @@ alpha_centauri_ab_colony = {
 
 		planet = {#V
 			class = "pc_toxic"
-			orbit_distance = 13
-			orbit_angle = 165
-			size = 23
+			orbit_distance = @ac_acaV_distance
+			orbit_angle = @ac_acaV_orbit_angle
+			size = @ac_acaV_size
 			has_ring = no
-			change_orbit = 6
+			change_orbit = @ac_acaV_min_orbit
 
 			moon = {
 				class = "pc_barren_cold"
-				size = 9
-				orbit_distance = 5
-				orbit_angle = 100
+				orbit_distance = @ac_acaVa_distance
+				orbit_angle = @ac_acaVa_orbit_angle
+				size = @ac_acaVa_size
 				has_ring = no
 			}
 		}
 	}
 
-	change_orbit = -440	#Go back to center; number concerns the previous star (the parent)
+	change_orbit = @ac_aca_backtocenter
 
 	#######################################
 	########### Alpha Centauri B ##########
@@ -108,30 +106,29 @@ alpha_centauri_ab_colony = {
 		name = "NAME_Alpha_Centauri_B"
 		count = 1
 		class = pc_k_star
-		orbit_distance = 446
-		orbit_angle = -33
-		size = 27
+		orbit_distance = @ac_acb_distance
+		orbit_angle = @ac_acb_orbit_angle
+		size = @ac_acb_size
 		has_ring = no
 		satellite_naming_policy = upper_case_roman_numerals
 
-		change_orbit = 16	#min
+		change_orbit = @ac_acb_min_orbit	#min
 
 		planet = { #I
 			class = "pc_barren"
-			orbit_distance = 8
-			orbit_angle = 220
-			size = 10
+			orbit_distance = @ac_acbI_distance
+			orbit_angle = @ac_acbI_orbit_angle
+			size = @ac_acbI_size
 			has_ring = no
-			change_orbit = 6
 		}
 
 		planet = { #II - hab zone
 			class = "pc_barren"
-			orbit_distance = 3.2
-			orbit_angle = 270
-			size = 17
+			orbit_distance = @ac_acbII_distance
+			orbit_angle = @ac_acbII_orbit_angle
+			size = @ac_acbII_size
 			has_ring = no
-			change_orbit = 6
+			change_orbit = @ac_acbII_min_orbit
 
 			init_effect = {
 				add_modifier = {
@@ -142,31 +139,31 @@ alpha_centauri_ab_colony = {
 
 			moon = {
 				class = "pc_barren"
-				size = 5
-				orbit_distance = 4
-				orbit_angle = -65
+				orbit_distance = @ac_acbIIa_distance
+				orbit_angle = @ac_acbIIa_orbit_angle
+				size = @ac_acbIIa_size
 				has_ring = no
 			}
 		}
 
 		planet = { #III
 			class = "pc_barren"
-			orbit_distance = 11
-			orbit_angle = 170
-			size = 21
+			orbit_distance = @ac_acbIII_distance
+			orbit_angle = @ac_acbIII_orbit_angle
+			size = @ac_acbIII_size
 			has_ring = no
 		}
 
 		planet = { #IV
 			class = "pc_frozen"
-			orbit_distance = 18
-			orbit_angle = 60
-			size = 11
+			orbit_distance = @ac_acbIV_distance
+			orbit_angle = @ac_acbIV_orbit_angle
+			size = @ac_acbIV_size
 			has_ring = yes
 		}
 	}
 
-	change_orbit = -446	#Go back to center
+	change_orbit = @ac_acb_backtocenter
 
 	#######################################
 	########### Proxima Centauri ##########
@@ -175,19 +172,19 @@ alpha_centauri_ab_colony = {
 		name = "NAME_Proxima_Centauri"
 		count = 1
 		class = pc_m_star
-		orbit_distance = 440
-		orbit_angle = -162
-		size = 28
+		orbit_distance = @ac_acp_distance
+		orbit_angle = @ac_acp_orbit_angle
+		size = @ac_acp_size
 		has_ring = no
 		satellite_naming_policy = upper_case_roman_numerals
 	
-		change_orbit = 18 #min
+		change_orbit = @ac_acp_min_orbit
 
 		planet = { #I -real 'd'
 			class = pc_barren
-			orbit_distance = 2
-			orbit_angle = 225
-			size = 11
+			orbit_distance = @ac_acpI_distance
+			orbit_angle = @ac_acpI_orbit_angle
+			size = @ac_acpI_size
 			has_ring = no
 
 			init_effect = {
@@ -200,9 +197,9 @@ alpha_centauri_ab_colony = {
 
 		planet = { #II -real 'b'
 			class = pc_barren
-			orbit_distance = 1
-			orbit_angle = -75
-			size = 17
+			orbit_distance = @ac_acpII_distance
+			orbit_angle = @ac_acpII_orbit_angle
+			size = @ac_acpII_size
 			has_ring = no
 
 			init_effect = {
@@ -215,48 +212,48 @@ alpha_centauri_ab_colony = {
 
 		planet = { #III
 			class = pc_barren_cold
-			size = 12
-			orbit_distance = 2
-			orbit_angle = 170
+			orbit_distance = @ac_acpIII_distance
+			orbit_angle = @ac_acpIII_orbit_angle
+			size = @ac_acpIII_size
 			has_ring = no
 		}
 
 		planet = { #IV
 			class = pc_barren_cold
-			size = 14
-			orbit_distance = 3
-			orbit_angle = 100
+			orbit_distance = @ac_acpIV_distance
+			orbit_angle = @ac_acpIV_orbit_angle
+			size = @ac_acpIV_size
 			has_ring = no
 		}
 
 		planet = { #V
 			class = pc_barren_cold
-			size = 15
-			orbit_distance = 4.5
-			orbit_angle = 195
+			orbit_distance = @ac_acpV_distance
+			orbit_angle = @ac_acpV_orbit_angle
+			size = @ac_acpV_size
 			has_ring = no
 		}
 
 		planet = { #VI
 			class = pc_frozen
-			size = 16
-			orbit_distance = 6
-			orbit_angle = 125
+			orbit_distance = @ac_acpVI_distance
+			orbit_angle = @ac_acpVI_orbit_angle
+			size = @ac_acpVI_size
 			has_ring = no
 		}
 
 		planet = { #VII -real 'c'
 			class = pc_gas_giant
-			size = 15
-			orbit_distance = 21.5
-			orbit_angle = 170
+			orbit_distance = @ac_acpVII_distance
+			orbit_angle = @ac_acpVII_orbit_angle
+			size = @ac_acpVII_size
 			has_ring = no
 
 			moon = {
 				class = pc_frozen
-				size = 3
-				orbit_distance = 9
-				orbit_angle = 76
+				orbit_distance = @ac_acpVIIa_distance
+				orbit_angle = @ac_acpVIIa_orbit_angle
+				size = @ac_acpVIIa_size
 				has_ring = no
 			}
 

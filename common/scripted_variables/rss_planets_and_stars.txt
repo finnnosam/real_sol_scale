@@ -1,0 +1,319 @@
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ###     Sol                                                                                 ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+
+###########
+#   Sun   #
+@sol_sunsize = 30
+###########
+###########
+
+#######################
+#  - Inner Planets -  #
+
+# Mercury
+@sol_mercury_distance    = 24
+@sol_mercury_orbit_angle = 160
+@sol_mercury_size        = 7
+
+# Venus
+@sol_venus_distance      = 5
+@sol_venus_orbit_angle   = 125
+@sol_venus_size          = 17
+
+# Earth
+@sol_earth_distance      = 4
+@sol_earth_orbit_angle   = 120
+@sol_earth_size          = 18
+
+# - Moon
+@sol_moon_distance       = 6
+@sol_moon_orbit_angle    = 40
+@sol_moon_size           = 5
+
+# Mars 
+@sol_mars_distance       = 7
+@sol_mars_orbit_angle    = 60
+@sol_mars_size           = 10
+#######################
+#######################
+
+###################
+#  - Asteroids -  #
+@sol_asteroidbelt_radius    = 56
+
+# 1 Ceres 
+@sol_1ceres_distance        = 16
+@sol_1ceres_orbit_angle     = -210
+
+# 2 Pallas 
+@sol_2pallas_distance       = 0
+@sol_2pallas_orbit_angle    = -95
+
+# 3 Juno 
+@sol_3juno_distance         = 0
+@sol_3juno_orbit_angle      = 285
+
+# 4 Vesta
+@sol_4vesta_distance        = 0
+@sol_4vesta_orbit_angle     = -80
+###################
+###################
+
+#######################
+#  - Outer Planets -  #
+
+###  Jupiter  ###
+@sol_jupiter_distance       = 35
+@sol_jupiter_orbit_angle    = -160
+@sol_jupiter_size           = 35
+
+@sol_jupiter_min_orbit   = 6
+
+# Io
+@sol_io_distance       = 10
+@sol_io_orbit_angle    = 110
+@sol_io_size           = 5
+# Europa
+@sol_europa_distance       = 2
+@sol_europa_orbit_angle    = 190
+@sol_europa_size           = 4
+# Ganymede
+@sol_ganymede_distance       = 2
+@sol_ganymede_orbit_angle    = 80
+@sol_ganymede_size           = 7
+# Callisto
+@sol_callisto_distance       = 2
+@sol_callisto_orbit_angle    = -155
+@sol_callisto_size           = 7
+#################
+
+###  Saturn  ###
+@sol_saturn_distance       = 60
+@sol_saturn_orbit_angle    = 170
+@sol_saturn_size           = 30
+
+@sol_saturn_min_orbit   = 7
+
+# Titan
+@sol_titan_distance       = 11
+@sol_titan_orbit_angle    = 320
+@sol_titan_size           = 8
+################
+
+###  Uranus  ###
+@sol_uranus_distance       = 134
+@sol_uranus_orbit_angle    = 125
+@sol_uranus_size           = 20
+
+###  Neptune  ###
+@sol_neptune_distance       = 151
+@sol_neptune_orbit_angle    = -195
+@sol_neptune_size           = 20
+# Triton
+@sol_triton_distance       = 9
+@sol_triton_orbit_angle    = 115
+@sol_triton_size           = 4
+#################
+#######################
+#######################
+
+#################
+#  - Kuipers -  #
+@sol_kuiperbelt_radius   = 461
+
+# Pluto
+@sol_pluto_distance        = 25
+@sol_pluto_orbit_angle     = -210
+
+# Makemake
+@sol_makemake_distance       = 0
+@sol_makemake_orbit_angle    = -95
+
+# Haumea
+@sol_haumea_distance         = 0
+@sol_haumea_orbit_angle      = 285
+
+# Varuna
+@sol_varuna_distance        = 0
+@sol_varuna_orbit_angle     = -80
+#################
+
+### Juno / Planet Nine  ###
+@sol_juno_distance       = 35
+@sol_juno_orbit_angle    = -195
+@sol_juno_size           = 15
+# Eileithyia
+@sol_eileithyia_distance       = 8
+@sol_eileithyia_orbit_angle    = 84
+@sol_eileithyia_size           = 6
+#######################
+
+
+
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ###     Alpha Centarui                                                                      ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+
+
+
+###################
+#   Alpha Cen A   #
+@ac_aca_distance    = 440
+@ac_aca_orbit_angle = 150
+@ac_aca_size        = 34
+
+@ac_aca_min_orbit   = 19
+
+@ac_acaI_distance    = 4
+@ac_acaI_orbit_angle = 150
+@ac_acaI_size        = 7
+
+@ac_acaII_distance    = 5
+@ac_acaII_orbit_angle = 45
+@ac_acaII_size        = 13
+
+@ac_acaIII_distance    = 7.5
+@ac_acaIII_orbit_angle = 205
+@ac_acaIII_size        = 11
+
+@ac_acaIV_distance    = 8
+@ac_acaIV_orbit_angle = 255
+@ac_acaIV_size        = 17
+
+@ac_acaV_distance    = 13
+@ac_acaV_orbit_angle = 165
+@ac_acaV_size        = 23
+
+@ac_acaV_min_orbit   = 6
+
+@ac_acaVa_distance    = 5
+@ac_acaVa_orbit_angle = 100
+@ac_acaVa_size        = 9
+
+#   Alpha Cen A   #
+###################
+
+@ac_aca_backtocenter = -440     #Go back to center; number concerns the previous star (the parent)
+
+###################
+#   Alpha Cen B   #
+
+@ac_acb_distance    = 446
+@ac_acb_orbit_angle = -33
+@ac_acb_size        = 27
+
+@ac_acb_min_orbit   = 16
+
+@ac_acbI_distance    = 8
+@ac_acbI_orbit_angle = 220
+@ac_acbI_size        = 10
+
+@ac_acbII_distance    = 3.2
+@ac_acbII_orbit_angle = 270
+@ac_acbII_size        = 17
+
+@ac_acbII_min_orbit   = 6
+
+@ac_acbIIa_distance    = 4
+@ac_acbIIa_orbit_angle = 115
+@ac_acbIIa_size        = 5
+
+@ac_acbIII_distance    = 11
+@ac_acbIII_orbit_angle = 170
+@ac_acbIII_size        = 21
+
+@ac_acbIV_distance    = 18
+@ac_acbIV_orbit_angle = 60
+@ac_acbIV_size        = 11
+
+#   Alpha Cen B   #
+###################
+
+@ac_acb_backtocenter = -446     #Go back to center; number concerns the previous star (the parent)
+
+###################
+#   Proxima Cen   #
+
+@ac_acp_distance    = 440
+@ac_acp_orbit_angle = -162
+@ac_acp_size        = 28
+
+@ac_acp_min_orbit   = 18
+
+@ac_acpI_distance    = 2
+@ac_acpI_orbit_angle = 225
+@ac_acpI_size        = 11
+
+@ac_acpII_distance    = 1
+@ac_acpII_orbit_angle = -75
+@ac_acpII_size        = 17
+
+@ac_acpIII_distance    = 2
+@ac_acpIII_orbit_angle = 170
+@ac_acpIII_size        = 12
+
+@ac_acpIV_distance    = 3
+@ac_acpIV_orbit_angle = 100
+@ac_acpIV_size        = 14
+
+@ac_acpV_distance    = 4.5
+@ac_acpV_orbit_angle = 195
+@ac_acpV_size        = 15
+
+@ac_acpVI_distance    = 6
+@ac_acpVI_orbit_angle = 125
+@ac_acpVI_size        = 16
+
+@ac_acpVII_distance    = 21.5
+@ac_acpVII_orbit_angle = 170
+@ac_acpVII_size        = 15
+
+@ac_acpVIIa_distance    = 9
+@ac_acpVIIa_orbit_angle = 76
+@ac_acpVIIa_size        = 3
+
+#   Proxima Cen   #
+###################
+
+
+
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ###     Procyon                                                                             ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+
+
+
+#################
+#   Procyon B   #
+
+#   Procyon B   #
+#################
+
+#################
+#   Procyon A   #
+
+#   Procyon A   #
+#################
+
+
+
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ###     Sirius                                                                              ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+
+
+
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ###     Barnard's Star                                                                      ### ### ###
+### ### ###                                                                                         ### ### ###
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
